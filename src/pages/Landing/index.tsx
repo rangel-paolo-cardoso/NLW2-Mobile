@@ -13,9 +13,9 @@ import heartIcon from '../../assets/images/icons/heart.png';
 const Landing = () => {
   const { navigate } = useNavigation();
 
-  const handleNavigateToGiveClassesPage = () => {
-    navigate('GiveClasses');
-  };
+  const handleNavigateToGiveClassesPage = () => navigate('GiveClasses');
+
+  const handleNavigateToStudyPages = () => navigate('Study');
 
   return (
     <View style={styles.container}>
@@ -27,7 +27,9 @@ const Landing = () => {
       </Text>
 
       <View style={styles.buttonsContainer}>
-        <RectButton style={[styles.button, styles.buttonPrimary]}>
+        <RectButton
+          onPress={handleNavigateToStudyPages}
+          style={[styles.button, styles.buttonPrimary]}>
           <Image source={studyIcon} />
 
           <Text style={styles.buttonText}>Estudar</Text>
@@ -44,8 +46,7 @@ const Landing = () => {
       </View>
 
       <Text style={styles.totalConnections}>
-        Total de 285 conexões já realizadas {' '}
-        <Image source={heartIcon} />
+        Total de 285 conexões já realizadas <Image source={heartIcon} />
       </Text>
     </View>
   );
