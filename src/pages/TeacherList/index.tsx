@@ -10,6 +10,7 @@ import TeacherItem, { Teacher } from '../../components/TeacherItem';
 import api from '../../services/api';
 
 import styles from './styles';
+import { useFocusEffect } from '@react-navigation/native';
 
 const TeacherList = () => {
   const [teachers, setTeachers] = useState([]);
@@ -30,6 +31,10 @@ const TeacherList = () => {
       }
     });
   };
+
+  useFocusEffect(() => {
+    loadFavorites();
+  });
 
   const handleToggleFiltersVisible = () => setIsFiltersVisible(!isFiltersVisible);
 
