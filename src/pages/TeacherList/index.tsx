@@ -11,6 +11,10 @@ import styles from './styles';
 const TeacherList = () => {
   const [isFiltersVisible, setIsFiltersVisible] = useState(false);
 
+  const [subject, setSubject] = useState('');
+  const [week_day, setWeekDay] = useState('');
+  const [time, setTime] = useState('');
+
   const handleToggleFiltersVisible = () => setIsFiltersVisible(!isFiltersVisible);
 
   return (
